@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = fragCoord / iResolution.xy;\n    \n    fragColor = vec4(uv, 1.0);\n}",
+      "code": "void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = fragCoord / iResolution.xy;\n    \n    fragColor = vec4(uv,0.0, 1.0);\n}",
       "name": "Image",
       "description": "",
       "type": "image"
