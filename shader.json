@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    d-=0.5;\n    fragColor = vec4(d,d,d, 1.0);\n}",
+      "code": "void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    d-=0.5;\n    d=abs(d);\n    d=smoothstep(0.0,0.1,d);\n    fragColor = vec4(d,d,d, 1.0);\n}",
       "name": "Image",
       "description": "",
       "type": "image"
