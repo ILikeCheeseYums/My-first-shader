@@ -4,10 +4,10 @@ vec3 palette(float t, vec3 a, vec3 b, vec3 c, vec3 d) {
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
+    uv=fract(uv);
     float d = length(uv);
-    
     vec3 col = palette(
-        1.0, 
+        d+iTime, 
         vec3(0.5, 0.5, 0.5), 
         vec3(0.5, 0.5, 0.5), 
         vec3(1.0, 1.0, 1.0), 
