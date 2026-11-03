@@ -1,5 +1,5 @@
-vec3 palatte(float t,vec3 a,){
-
+vec3 palatte(float t,vec3 a,vec3 b,vec3 c,vec3 d){
+    return a + b*cos(6.28318*(c*t*d));
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
