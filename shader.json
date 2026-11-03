@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "vec3 palatte(float t,vec3 a,vec3 b,vec3 c,vec3 d){\n    return a + b*cos(6.28318*(c*t*d));\n}\n\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    vec3 col = vec3(1.0,2.0,3.0);\n    d=sin(d*8. + iTime)/8.;\n    d=0.01/abs(d);\n    col*=d;\n    fragColor = vec4(col, 1.0);\n}",
+      "code": "vec3 palatte(float t,vec3 a,vec3 b,vec3 c,vec3 d){\n    return a + b*cos(6.28318*(c*t*d));\n}\n\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;\n    float d = length(uv);\n    vec3 col = palatte(1.,[0.500 0.500 0.500],[0.500 0.500 0.500],[1.000 1.000 1.000],[0.000 0.333 0.667])\n    d=sin(d*8. + iTime)/8.;\n    d=0.01/abs(d);\n    col*=d;\n    fragColor = vec4(col, 1.0);\n}",
       "name": "Image",
       "description": "",
       "type": "image"
