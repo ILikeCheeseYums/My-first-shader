@@ -8,12 +8,14 @@ vec3 palette(float t) {
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
+    uv*=2.0;
     uv=fract(uv);
+    uv-=0.5;
     float d = length(uv);
     vec3 col = palette(d+iTime);
     
     d = sin(d * 8.0 + iTime) / 8.0;
-    d = 0.01 / abs(d);
+    d = 0.02 / abs(d);
     col *= d;
     
     fragColor = vec4(col, 1.0);
